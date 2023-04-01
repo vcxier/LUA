@@ -27,6 +27,8 @@ local OrionLib = {
 	SaveCfg = false
 }
 
+
+-- spacing asset id 12959197370 --
 --Feather Icons https://github.com/gasps/lucideblox/tree/master/src/modules/util - Created by 7kayoh
 local Icons = {}
 
@@ -879,7 +881,7 @@ function OrionLib:MakeWindow(WindowConfig)
 					}), "Text"),
 					AddThemeObject(SetProps(MakeElement("Image", ButtonConfig.Icon), {
 						Size = UDim2.new(0, 20, 0, 20),
-						Position = UDim2.new(1, -35, 0, 7),
+						Position = UDim2.new(1, -45, 0, 7),
 					}), "TextDark"),
 					AddThemeObject(MakeElement("Stroke"), "Stroke"),
 					Click
