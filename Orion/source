@@ -886,7 +886,7 @@ function OrionLib:MakeWindow(WindowConfig)
 					}), "TextDark"),
 					AddThemeObject(SetProps(MakeElement("Image", ButtonConfig.Icon2), {
 						Size = UDim2.new(0, 20, 0, 20),
-						Position = UDim2.new(1, 12, 0, 7),
+						Position = UDim2.new(1, -12, 0, 7),
 					}), "TextDark"),
 					AddThemeObject(MakeElement("Stroke"), "Stroke"),
 					Click
