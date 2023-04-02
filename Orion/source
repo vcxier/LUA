@@ -862,7 +862,6 @@ function OrionLib:MakeWindow(WindowConfig)
 				ButtonConfig.Name = ButtonConfig.Name or "Button"
 				ButtonConfig.Callback = ButtonConfig.Callback or function() end
 				ButtonConfig.Icon = ButtonConfig.Icon or "rbxassetid://3944703587"
-				ButtonConfig.Icon2 = ButtonConfig.Icon2 or "rbxassetid://3944703587"
 
 				local Button = {}
 
@@ -876,7 +875,7 @@ function OrionLib:MakeWindow(WindowConfig)
 				}), {
 					AddThemeObject(SetProps(MakeElement("Label", ButtonConfig.Name, 15), {
 						Size = UDim2.new(1, -12, 1, 0),
-						Position = UDim2.new(0, 32, 0, 0),
+						Position = UDim2.new(0, 12, 0, 0),
 						Font = Enum.Font.GothamBold,
 						Name = "Content"
 					}), "Text"),
