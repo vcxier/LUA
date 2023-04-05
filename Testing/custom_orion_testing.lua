@@ -862,6 +862,7 @@ function OrionLib:MakeWindow(WindowConfig)
 				ButtonConfig.Name = ButtonConfig.Name or "Button"
 				ButtonConfig.Callback = ButtonConfig.Callback or function() end
 				ButtonConfig.Icon = ButtonConfig.Icon or "rbxassetid://3944703587"
+				ButtonConfig.Icon2 = ButtonConfig.Icon2 or "rbxassetid://3944703587"
 
 				local Button = {}
 
@@ -875,13 +876,17 @@ function OrionLib:MakeWindow(WindowConfig)
 				}), {
 					AddThemeObject(SetProps(MakeElement("Label", ButtonConfig.Name, 15), {
 						Size = UDim2.new(1, -12, 1, 0),
-						Position = UDim2.new(0, 12, 0, 0),
+						Position = UDim2.new(0, 32, 0, 0),
 						Font = Enum.Font.GothamBold,
 						Name = "Content"
 					}), "Text"),
 					AddThemeObject(SetProps(MakeElement("Image", ButtonConfig.Icon), {
 						Size = UDim2.new(0, 20, 0, 20),
 						Position = UDim2.new(1, -30, 0, 7),
+					}), "TextDark"),
+					AddThemeObject(SetProps(MakeElement("Image", ButtonConfig.Icon2), {
+						Size = UDim2.new(0, 20, 0, 20),
+						Position = UDim2.new(0, 32, 0, 0),
 					}), "TextDark"),
 					AddThemeObject(MakeElement("Stroke"), "Stroke"),
 					Click
@@ -1766,3 +1771,193 @@ function OrionLib:Destroy()
 end
 
 return OrionLib
+
+
+-- END OF ORION FRAMEWORK --
+
+local Player = game.Players.LocalPlayer
+
+local Window = OrionLib:MakeWindow({Name = "gasps.github.io - dev", HidePremium = false, SaveConfig = true, IntroText = "gasps.github.io"})
+
+OrionLib:MakeNotification({
+	Name = "welcome to gasps hub",
+	Content = "developer version - welcome "..Player.Name..".",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+
+local mainTab = Window:MakeTab({
+	Name = "main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local playerTab = Window:MakeTab({
+	Name = "player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local miscTab = Window:MakeTab({
+	Name = "misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local creditsTab = Window:MakeTab({
+	Name = "credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local gamesList = Window:MakeTab({
+	Name = "games list",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+-- FUNCTIONS --
+
+-- MISC FUNCTIONS --
+
+playerTab:AddSlider({
+	Name = "walkspeed",
+	Min = 16,
+	Max = 200,
+	Default = 16,
+	Increment = 1,
+	ValueName = "#",
+	Color = Color3.fromRGB(0,60,121),
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+	end     
+})
+playerTab:AddSlider({
+	Name = "JumpPower",
+	Min = 50,
+	Max = 200,
+	Default = 50,
+	Increment = 1,
+	ValueName = "#",
+	Color = Color3.fromRGB(0,60,121),
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+	end    
+})
+
+playerTab:AddButton({
+	Name = "inf jump (laggy)",
+	Color = Color3.fromRGB(0,60,121),
+	Callback = function()
+	    while wait() do
+      	local Player = game:GetService'Players'.LocalPlayer;
+		local UIS = game:GetService'UserInputService';
+
+		_G.JumpHeight = game.Players.LocalPlayer.Character.Humanoid.JumpPower;
+
+		function Action(Object, Function) if Object ~= nil then Function(Object); end end
+
+UIS.InputBegan:connect(function(UserInput)
+    if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+        Action(Player.Character.Humanoid, function(self)
+            if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+                Action(self.Parent.HumanoidRootPart, function(self)
+                    self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+                end)
+            end
+        end)
+    end
+end)
+	    end    
+  end
+})
+playerTab:AddButton({
+	Name = "fly",
+	Callback = function()
+	          	OrionLib:MakeNotification({
+	Name = "fly",
+	Content = "e to toggle flight \n noclip enabled aswell",
+	Image = "rbxassetid://6833114846",
+	Time = 10
+})
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/gasps/LUA/main/Scripts/Roblox/AEBypassing/CFrameFly.lua"))()
+  	end    
+})
+
+playerTab:AddButton({
+	Name = "fast fly",
+	Callback = function()
+	          	OrionLib:MakeNotification({
+	Name = "fast fly",
+	Content = "e to toggle flight \n noclip enabled aswell",
+	Image = "rbxassetid://6833114846",
+	Time = 10
+})
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/gasps/LUA/main/Scripts/Roblox/AEBypassing/CFrameFlyFast.lua"))()
+  	end    
+})
+
+-- TESTING AREA --
+local testingTab = Window:MakeTab({
+	Name = "Testing",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+testingTab:AddButton({
+	Name = "Github GUI",
+	Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/gasps/LUA/main/Testing/orion_test.lua')))()
+  	end    
+})
+
+-- SPACING --
+local spacing1 = Window:MakeTab({
+	Name = " ",
+	Icon = "rbxassetid://12959197370",
+	PremiumOnly = false
+})
+local spacing2 = Window:MakeTab({
+	Name = " ",
+	Icon = "rbxassetid://12959197370",
+	PremiumOnly = false
+})
+local spacing3 = Window:MakeTab({
+	Name = " ",
+	Icon = "rbxassetid://12959197370",
+	PremiumOnly = false
+})
+local spacing4 = Window:MakeTab({
+	Name = " ",
+	Icon = "rbxassetid://12959197370",
+	PremiumOnly = false
+})
+local spacing5 = Window:MakeTab({
+	Name = " ",
+	Icon = "rbxassetid://12959197370",
+	PremiumOnly = false
+})
+
+-- DEVELOPER AREA --
+local DeveloperTab = Window:MakeTab({
+	Name = "Developer Tools",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+DeveloperTab:AddButton({
+	Name = "inject simplespy paste",
+	Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/gasps/LUA/main/Scripts/Developer%20Scripts/SimpleSpy.lua')))()
+  	end    
+})
+DeveloperTab:AddButton({
+	Name = "inject darkdex v3",
+	Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/gasps/LUA/main/Scripts/Developer%20Scripts/DarkDexV3.lua')))()
+  	end    
+})
+
+
+
+OrionLib:Init()
+
