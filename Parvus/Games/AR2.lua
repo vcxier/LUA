@@ -6,7 +6,7 @@ local RunService = game:GetService("RunService")
 local PlayerService = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
 
-local Loaded,PromptLib = false,loadstring(game:HttpGet("https://raw.githubusercontent.com/AlexR32/Roblox/main/Useful/PromptLibrary.lua"))(
+local Loaded,PromptLib = false,loadstring(game:HttpGet("https://raw.githubusercontent.com/AlexR32/Roblox/main/Useful/PromptLibrary.lua"))()
 
 local Camera = Workspace.CurrentCamera
 local LocalPlayer = PlayerService.LocalPlayer
@@ -79,6 +79,7 @@ end)]]
 local ProjectileSpeed,ProjectileGravity,GravityCorrection = 1000,
 math.abs(Globals.ProjectileGravity),2
 local ItemMemory,NoClipEvent,NoClipObjects,TeleportBypass = {},nil,{},false
+local SetIdentity = setidentity or (syn and syn.set_thread_identity)
 
 --[[RenderSettings.Loot = 1
 RenderSettings.Elements = 1
