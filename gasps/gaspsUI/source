@@ -27,11 +27,11 @@ local gaspsLib = {
 	SaveCfg = false
 }
 
---Feather Icons https://github.com/gasps/LUA/gasps/lucideblox/tree/master/src/modules/util - Created by 7kayoh
+--Feather Icons https://github.com/gasps/LUA/tree/main/gasps/lucideblox/src/modules/util - Created by 7kayoh
 local Icons = {}
 
 local Success, Response = pcall(function()
-	Icons = HttpService:JSONDecode(game:HttpGetAsync("https://raw.githubusercontent.com/gasps/LUA/gasps/lucideblox/master/src/modules/util/icons.json")).icons
+	Icons = HttpService:JSONDecode(game:HttpGetAsync("https://raw.githubusercontent.com/gasps/LUA/main/gasps/lucideblox/src/modules/util/icons.json")).icons
 end)
 
 if not Success then

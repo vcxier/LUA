@@ -1,4 +1,4 @@
-local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/gasps/LUA/gasps/MaterialLua/master/Module.lua"))()
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/gasps/LUA/main/gasps/MaterialLua/Module.lua"))()
 
 local X = Material.Load({
 	Title = "Test",

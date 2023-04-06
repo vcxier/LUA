@@ -3,7 +3,7 @@ This documentation is for the stable release of gasps Library.
 
 ## Booting the Library
 ```lua
-local gaspsLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/gasps/LUA/gasps/gaspsUI/main/source')))()
+local gaspsLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/gasps/LUA/main/gasps/gaspsUI/source')))()
 ```
 
 

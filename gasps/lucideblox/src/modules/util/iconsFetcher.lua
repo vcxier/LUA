@@ -1,7 +1,7 @@
 local HttpService = game:GetService("HttpService")
 
 local DEFAULT_ICONS = require(script.Parent.icons)
-local ICONS_SOURCE_URI = "https://raw.githubusercontent.com/gasps/LUA/gasps/lucideblox/master/src/modules/util/icons.json"
+local ICONS_SOURCE_URI = "https://raw.githubusercontent.com/gasps/LUA/main/gasps/lucideblox/src/modules/util/icons.json"
 
 local success, response = pcall(HttpService.GetAsync, HttpService, ICONS_SOURCE_URI)
 
