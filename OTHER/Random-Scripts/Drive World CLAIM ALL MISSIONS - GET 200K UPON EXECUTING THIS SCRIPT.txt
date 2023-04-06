@@ -1,0 +1,6 @@
+--Normal missions
+for i,v in pairs(game.ReplicatedStorage.PlayerData[game.Players.LocalPlayer.Name].Tasks.Missions:GetChildren()) do
+local quest = v
+
+game:GetService("ReplicatedStorage").Systems.Tasks.Claim:InvokeServer(quest)
+end

@@ -1,0 +1,1 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/andrewc0de/Roblox/main/Games/frontlines-ui.lua'))()

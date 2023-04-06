@@ -1,38 +1,3 @@
-<<<<<<< HEAD
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/gasps/LUA/main/Orion/source')))()
-
-
-local Player = game.Players.LocalPlayer
-
-local Window = OrionLib:MakeWindow({Name = "gasps.github.io - login", HidePremium = false, SaveConfig = true, IntroText = "gasps.github.io"})
-
-OrionLib:MakeNotification({
-	Name = "welcome to gasps hub",
-	Content = "developer version - welcome "..Player.Name..".",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-
-local LoginTab = Window:MakeTab({
-	Name = "Login",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-LoginTab:AddTextbox({
-	Name = "login",
-	Default = "enter username",
-	TextDisappear = true,
-	Callback = function(Value)
-		print(Value)
-	end	  
-})
-
-Local RegisterTab = Window:MakeTab({
-	Name = "Register",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-=======
 -- Cloneref support (adds support for JJsploit/Temple/Electron and other sploits that don't have cloneref or really shit versions of it.)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/CloneRef.lua", true))()
 
@@ -101,4 +66,3 @@ local function Load(Obj, Url)
 end
 
 Load(Bypassed_Dex)
->>>>>>> 92e27af514c4421a0b97df4c7e54f287f0691e0c

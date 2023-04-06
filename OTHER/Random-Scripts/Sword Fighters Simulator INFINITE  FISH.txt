@@ -1,0 +1,18 @@
+--[[
+
+All fish names:
+Bull Shark
+Grouper
+Arowana
+Gold Fish
+Saw Fish
+Electric Eel
+Octopus
+Betta Fish
+Frog
+Paddle Fish
+
+--]]
+
+
+game:GetService("ReplicatedStorage").Packages.Knit.Services.FishingService.RF.RemoveFish:InvokeServer("Put name here", -9e9)
